@@ -39,6 +39,13 @@ $(window).resize(function() {
 
 function timeElapse(date){
 	var current = Date();
+	var myDate = new Date();
+	var current_year = myDate.getFullYear();
+	var current_month = myDate.getMonth()+1;
+	var current_date = myDate.getDate();
+	// console.log(myDate.getFullYear());
+	// console.log(myDate.getMonth()+1);
+	// console.log(myDate.getDate());
 	var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
 	var days = Math.floor(seconds / (3600 * 24));
 	seconds = seconds % (3600 * 24);
@@ -55,6 +62,6 @@ function timeElapse(date){
 	if (seconds < 10) {
 		seconds = "0" + seconds;
 	}
-	var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 小时 <span class=\"digit\">" + minutes + "</span> 分钟 <span class=\"digit\">" + seconds + "</span> 秒。               <br/> 始于<span class=\"digit\">2012</span>年<span class=\"digit\">9</span>月<span class=\"digit\">22</span>日，直到<span class=\"digit\">2017</span>年<span class=\"digit\">6</span>月<span class=\"digit\">09</span>日..."; 
+	var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 小时 <span class=\"digit\">" + minutes + "</span> 分钟 <span class=\"digit\">" + seconds + "</span> 秒。               <br/> 始于<span class=\"digit\">2012</span>年<span class=\"digit\">9</span>月<span class=\"digit\">22</span>日，直到<span class=\"digit\">"+current_year+"</span>年<span class=\"digit\">"+current_month+"</span>月<span class=\"digit\">"+current_date+"</span>日..."; 
 	$("#clock").html(result);
 }
