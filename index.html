@@ -2,7 +2,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>璐璐女神范</title>
+<title>龙雨-女神节</title>
 <link type="text/css" rel="stylesheet" href="renxi/default.css">
 <script type="text/javascript" src="renxi/jquery.min.js"></script>
 <script type="text/javascript" src="renxi/jscex.min.js"></script>
@@ -19,6 +19,65 @@
     color: #666666
 }
 -->
+#background2 {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+ 
+#div1 {
+	background:#eeeeee;
+	width: 70%;
+	z-index: 1;
+	margin: 12% auto;
+	overflow: auto;
+}
+ 
+/* span {
+	color: white;
+	padding-top: 12px;
+	cursor: pointer;
+	padding-right: 15px;
+} */
+ 
+#div2 {
+	background:#eeeeee;
+	margin: auto;
+	height: 300px;
+	padding: 0 20px;
+}
+ 
+#close {
+	padding: 5px;
+	background: #5cd31b;
+}
+ 
+#close-button {
+	float: right;
+	font-size: 30px;
+}
+ 
+#foot {
+	padding: 5px 0;
+	text-align: center;
+	background: #5cd31b;
+	color: white;
+}
+ 
+h2 {
+	margin: 10px 0;
+	color: white;
+	padding-left: 15px;
+}
+ 
+h3 {
+	margin: 0 0px;
+	padding-top: 15px;
+}
 </style>
 </head>
 <body>
@@ -29,24 +88,31 @@
   <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
   <div id="wrap">
     <div id="text">
-      <div id="code"> <font color="#FF0000"> <span class="say">亲爱的璐璐女神，我喜欢你，虽然你看不见我对你的告白</span><br>
+      <div id="code"> <font color="#FF0000"> <span class="say">亲爱的龙雨，女神节快乐！</span><br>
+      
+        <span class="say">认识你真的很开心</span><br>
         <span class="say"> </span><br>
-        <span class="say"> 我知道我有点花言巧语，但是我会用行动证明一切</span><br>
-        <span class="say"> </span><br>
-        <span class="say">我有点啰嗦，有点不知道说什么</span><br>
-        <span class="say">结果说出的每句话都小心翼翼</span><br>
-        <span class="say">还是错了</span><br>
-        <span class="say">虽然你看不见我的告白，但是我还是要把这些心里话说出来</span><br>
-        <span class="say"> </span><br>
-        <span class="say"><span class="space"></span> --无聊的吕景帅--</span> </font>
+        <span class="say"><span class="space"></span> --无聊的朋友--吕景帅--</span> </font>
         </p>
       </div>
     </div>
-    <div id="clock-box"> <span class="STYLE1"></span><font color="#33CC00">亲爱的璐璐女神，我喜欢你</font> <span class="STYLE1">已经是……</span>
+    <div id="clock-box"> <span class="STYLE1"></span><font color="#33CC00">龙雨，认识你</font> <span class="STYLE1">已经是……</span>
       <div id="clock"></div>
     </div>
     <canvas id="canvas" width="1100" height="680"></canvas>
   </div>
+</div>
+<div id="background2">
+    <div id="div1" class="content">
+        <div id="close">
+            <span id="close-button"></span>
+            <h2>3月8号才能打开哦</h2>
+        </div>
+        <div id="div2">
+            <p style="text-algin:center">你真好，认识你做朋友很开心！</p>
+        </div>
+        <h3 id="foot">龙雨最漂亮</h3>
+    </div>
 </div>
 <script>
     </script>
@@ -104,15 +170,23 @@
         var hold = 1;
 
         canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
+            var myDates = new Date();
+            console.log(myDates.getMonth(),myDates.getDate())
+            if(myDates.getMonth() == 2 && myDates.getDate() == 8){
+                var offset = canvas.offset(), x, y;
+                x = e.pageX - offset.left;
+                y = e.pageY - offset.top;
+                if (seed.hover(x, y)) {
+                    hold = 0; 
+                    canvas.unbind("click");
+                    canvas.unbind("mousemove");
+                    canvas.removeClass('hand');
+                }
+            } else {
+                document.getElementById('background2').style.display = "block"
+              
             }
+
         }).mousemove(function(e){
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
@@ -178,7 +252,7 @@
 
         var textAnimate = eval(Jscex.compile("async", function () {
             var together = new Date();
-            together.setFullYear(2012,9 , 15);          //时间年月日
+            together.setFullYear(2019,1,15);          //时间年月日
             together.setHours(08);                      //小时    
             together.setMinutes(53);                    //分钟
             together.setSeconds(0);                 //秒前一位

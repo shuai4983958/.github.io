@@ -43,9 +43,6 @@ function timeElapse(date){
 	var current_year = myDate.getFullYear();
 	var current_month = myDate.getMonth()+1;
 	var current_date = myDate.getDate();
-	// console.log(myDate.getFullYear());
-	// console.log(myDate.getMonth()+1);
-	// console.log(myDate.getDate());
 	var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
 	var days = Math.floor(seconds / (3600 * 24));
 	seconds = seconds % (3600 * 24);
@@ -62,6 +59,15 @@ function timeElapse(date){
 	if (seconds < 10) {
 		seconds = "0" + seconds;
 	}
-	var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 小时 <span class=\"digit\">" + minutes + "</span> 分钟 <span class=\"digit\">" + seconds + "</span> 秒。               <br/> 始于<span class=\"digit\">2012</span>年<span class=\"digit\">9</span>月<span class=\"digit\">22</span>日，直到<span class=\"digit\">"+current_year+"</span>年<span class=\"digit\">"+current_month+"</span>月<span class=\"digit\">"+current_date+"</span>日..."; 
+	// var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 小时 <span class=\"digit\">" + minutes + "</span> 分钟 <span class=\"digit\">" + seconds + "</span> 秒。               <br/> 始于<span class=\"digit\">2019</span>年<span class=\"digit\">1</span>月<span class=\"digit\">15</span>日，直到<span class=\"digit\">"+current_year+"</span>年<span class=\"digit\">"+current_month+"</span>月<span class=\"digit\">"+current_date+"</span>日..."; 
+	// $("#clock").html(result);
+	var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + hours + "</span> 小时 <span class=\"digit\">" + minutes + "</span> 分钟 <span class=\"digit\">" + seconds + "</span> 秒。               <br/> 始于<span class=\"digit\">那些</span>年，直到<span class=\"digit\">"+'...'+"</span>年"; 
 	$("#clock").html(result);
+
+	//   /* <span class="say"> </span><br>
+    //     <span class="say"> 我知道我有点花言巧语，但是我会用行动证明一切</span><br>
+    //     <span class="say"> </span><br>
+    //     <span class="say">我有点啰嗦，有点不知道说什么</span><br>
+    //     <span class="say">结果说出的每句话都小心翼翼</span><br>
+    //     <span class="say">还是错了</span><br> */
 }
